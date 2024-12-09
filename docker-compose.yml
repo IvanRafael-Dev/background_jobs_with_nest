@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  redis:
+    image: redis
+    restart: on-failure
+    expose:
+      - 6379
+    ports:
+      - '6379:6379'
+    command: redis-server --save 60 1 --loglevel warning
+    container_name: redis-rocketseat
